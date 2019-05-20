@@ -13,7 +13,7 @@ var pattern = /am/g;
 console.log(pattern instanceof RegExp);
 
 // run the test method on the string
-// result: true
+// result: true 
 var blogText = "Sam I Am";
 var pattern = /am/g;
 console.log(pattern.test(blogText));
