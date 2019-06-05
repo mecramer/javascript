@@ -18,41 +18,65 @@ Underscores are called dunder (double underscore)
 The prototype property is most easily accessed on constructor functions
 */
 
+
+
+
 // reference a property that doesn't exist
-// result: TypeError: project.foo is not a function
 var project = {
   name: 'Project Phoenix'
 };
 // console.log(project.foo());
+// result: TypeError: project.foo is not a function
+
+
+
 
 // calling a method that doesn't exist on the object, but does on a prototype
-// result: [object object]
 var project = {
   name: 'Project Phoenix'
 };
 console.log(project.toString());
+// result: [object object]
 
-// result: object
+
+
+
 console.log(typeof Object.prototype);
+// result: object
+
+
+
 
 // the toString() function exists on Object.prototype
-// result: function
 console.log(typeof Object.prototype.toString);
+// result: function
+
+
+
 
 // the prototype is not accessible, its more of an internal field
-// result: undefined, it exists, but we don't have access to it, unless its a constructor function
 var project = {
   name: 'Project Phoenix'
 };
 console.log(project.prototype);
+// result: undefined, it exists, but we don't have access to it, unless its a constructor function
+
+
+
 
 // we can access it in most browsers by using dunder proto
 // you don't usually want this in production code
-// result: object, this is our prototype object
 console.log(typeof project.__proto__);
+// result: object, this is our prototype object
 
-// result: false, Object is a constructor function, whereas dunder proto is an object
+
+
+
 console.log(project.__proto__ === Object);
+// result: false, Object is a constructor function, whereas dunder proto is an object
 
-// result: true, every object has a prototype attached to it
+
+
+
 console.log(project.__proto__ === Object.prototype);
+// result: true, every object has a prototype attached to it
