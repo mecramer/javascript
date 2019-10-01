@@ -4,6 +4,4 @@
 // See https://developer.mozilla.org/en-US/docs/Web/API/Document
 
 
-
-
 console.log(document.body);

@@ -1,8 +1,6 @@
 // when we get the value of a promise, its referred to as settling a promise
 
 
-
-
 let promise = new Promise (
   function(resolve, reject) {
     setTimeout(resolve, 100, 'someValue');

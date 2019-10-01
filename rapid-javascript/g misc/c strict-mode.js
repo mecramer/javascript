@@ -1,8 +1,6 @@
 // generally, its better to write in strict mode
 
 
-
-
 var actNow = function () {
   'use strict';
   newVar = 9;
@@ -14,15 +12,11 @@ var actNow = function () {
 // but if you put in a global area, you could run into problems with libraries that aren't built for strict
 
 
-
-
 var actNow = function () {
   newVar = 9;
 };
 actNow();
 // result: no error, newVar is added to the global scope
-
-
 
 
 var actNow = function () {
@@ -32,8 +26,6 @@ var actNow = function () {
 actNow();
 // result: no error
 // delete removes from context, here its the context of the function
-
-
 
 
 var actNow = function () {
@@ -46,8 +38,6 @@ var actNow = function () {
 // in strict mode, you can't get rid of a variable
 
 
-
-
 var actNow = function () {
   var fn = function (a, a) {
 
@@ -55,8 +45,6 @@ var actNow = function () {
 };
 actNow();
 // result: no error
-
-
 
 
 var actNow = function () {
@@ -69,15 +57,11 @@ actNow();
 // result: syntaxError, duplicate parameter name not allowed
 
 
-
-
 var obj = {};
 with (obj) {
 
 }
 // result: no error
-
-
 
 
 'use strict';

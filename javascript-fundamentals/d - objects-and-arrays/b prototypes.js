@@ -2,8 +2,6 @@
 // you do not want to create a bunch of new objects from a constructor function with the same method
 // a prototype exists directly under a function
 
-
-
 function Car(id) {
   this.carId = id;
 }

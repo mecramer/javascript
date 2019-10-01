@@ -2,8 +2,6 @@
 // any javascript code can be placed in a module
 
 
-
-
 // in another file, we'd put some code, say car.js
 export class Car {
   constructor(id) {
@@ -11,8 +9,6 @@ export class Car {
   }
 }
 // this is a module
-
-
 
 
 // to import the module

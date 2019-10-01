@@ -2,8 +2,6 @@
 // this refers to an object but it doesn't refer to the function as an object itself
 // its a special object called a context for the function
 
-
-
 let fn = function () {
   console.log(this === window);
 };
@@ -11,8 +9,6 @@ fn();
 // result: true;
 // window is our global object
 // because we are not in strict mode and, here the this keyword does equal the global object
-
-
 
 
 // but usually we are working with objects when using this

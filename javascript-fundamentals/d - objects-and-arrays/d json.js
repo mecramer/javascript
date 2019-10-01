@@ -3,8 +3,6 @@
 // most often sending or receiving a JavaScript object to some API such as a RESTful API on the web
 
 
-
-
 let car = {
   id: 123,
   style: 'convertible'
@@ -18,8 +16,6 @@ console.log( JSON.stringify(car) );
 // now the string could be passed onto some API
 
 
-
-
 // arrays can also be converted to JSON
 let carIds = [
   {carId: 123},
@@ -28,8 +24,6 @@ let carIds = [
 ];
 console.log( JSON.stringify(carIds) );
 [{"carId":123},{"carId":456},{"carId":789}];
-
-
 
 
 // Parsing JSON

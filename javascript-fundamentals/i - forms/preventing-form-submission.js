@@ -4,8 +4,6 @@
 // we can also format the data
 
 
-
-
 let form = document.getElementById('user-form');
 form.addEventListener('submit', event => {
   // prevent the browser from submitting the form

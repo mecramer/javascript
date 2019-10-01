@@ -3,8 +3,6 @@
 // we call bind on a function and it makes a copy of that function and assigns a new context
 
 
-
-
 let o = {
   carId: 123,
   getId: function () {

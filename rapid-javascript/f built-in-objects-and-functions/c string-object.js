@@ -4,14 +4,10 @@ console.log(value.charAt(3));
 // charAt is a character at a certain index
 
 
-
-
 var value = 'My String';
 console.log(value.concat(' Lives!'));
 // resulte: My String Lives!
 // the concat function adds a string to another string
-
-
 
 
 var value = 'My String';
@@ -20,21 +16,15 @@ console.log(value.includes(' '));
 // boolean checking for presence of a string partiel
 
 
-
-
 var value = 'My String';
 console.log(value.endsWith('ing'));
 // result: true
 // boolean checking for string ending with the value given
 
 
-
-
 var value = 'My String';
 console.log(value.endsWith('ing '));
 // result: false
-
-
 
 
 var value = 'My String';
@@ -43,14 +33,10 @@ console.log(value.indexOf('M'));
 // indexOf shows the position of the character
 
 
-
-
 var value = 'My String';
 console.log(value.indexOf('Z'));
 // result: -1
 // indexOf shows -1 if it can't find
-
-
 
 
 var value = 'Some String';
@@ -59,14 +45,10 @@ console.log(value.lastIndexOf('S'));
 // the array index of the last occurrence of the character
 
 
-
-
 var value = 'Some String';
 console.log(value.slice(5));
 // result: String
 // slices off everything before the index number
-
-
 
 
 var value = 'Some String';
@@ -75,14 +57,10 @@ console.log(value.slice(5, 8));
 // start at index 5 and stop just before, but not including 8. So characters 5, 6, 7
 
 
-
-
 var value = 'Some String';
 console.log(value.slice(-3));
 // result: ing
 // starts at the end of the string
-
-
 
 
 var value = 'Some String';
@@ -91,22 +69,16 @@ console.log(value.split(' ').length);
 // an array of 2 is created split at the spaces. The lentgth of that array is 2
 
 
-
-
 var value = 'Some String';
 console.log(value.substr(0, 4));
 // result: Some
 // this function takes the starting position and the length
 
 
-
-
 var value = 'Some String';
 console.log(value.substring(5, 6));
 // result: S
 // substring, spelled out takes the starting index and ending, but the ending index is not inclusive
-
-
 
 
 var value = 'Some String';

@@ -2,8 +2,6 @@
 // XHR stands XML HTTP Request, which was the format prevalent years ago
 // XHR is build into browsers
 
-
-
 let xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {

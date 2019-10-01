@@ -5,8 +5,6 @@
 // it may take some time, but evenutally you will get a value back or at least an error
 
 
-
-
 let promise = new Promise (
   function(resolve, reject) {
     setTimeout(resolve, 100, 'someValue');

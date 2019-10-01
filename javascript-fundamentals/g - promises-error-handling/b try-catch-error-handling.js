@@ -1,7 +1,5 @@
 // one better way to handle errors is with the try and catch keywords
 
-
-
 try {
   let car = newCar;
 }

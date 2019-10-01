@@ -23,8 +23,6 @@ console.log(updateFn());
 // it will be able to access currentSalary through the function
 
 
-
-
 // Here we are going to call updateFn twice, just to show that it is persisting
 var SalaryUpdater = function (salary) {
   var currentSalary = salary;

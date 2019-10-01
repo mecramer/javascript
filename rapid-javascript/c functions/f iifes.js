@@ -9,16 +9,12 @@
 // The opening and closing parenthesis around the function and calling the function with the (), creates an iife
 
 
-
-
 (function () {
   var employeeName = 'Mark';
 }) ();
 // console.log(employeeName);
 // result: ReferenceError, employeeName exists only in the scope of the function, its being called from global scope
 // an iife does not pollute the global environment
-
-
 
 
 // there is an unwritten rule that every application and every library can have one single global variable
@@ -31,8 +27,6 @@ var app = {};
 console.log(app.name);
 // result: none;
 // you can pass an object or anything into an iife and use it internally within the function
-
-
 
 
 // assuming with have jQuery loaded up
@@ -49,8 +43,6 @@ var jQuery = {};
 // that the $ will equal jQuery
 
 
-
-
 // sometimes you'll see undefined being passed as another argument in the iife function
 // this will make sure that the systems undefined object will get set to undefined
 // in some older JS code, the keyword undefined can get redefined - bad practice
@@ -62,8 +54,6 @@ var jQuery = {};
   console.log(undefined);
 }) (app, jQuery);
 // result: undefined
-
-
 
 
 // another way to do an iife is using the unary + instead of parenthesis

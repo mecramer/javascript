@@ -2,8 +2,6 @@
 // we'll look at that here, but more likely, we'll use promises for error handling
 
 
-
-
 try {
   throw new Error ('Custom Error');
 }
@@ -15,8 +13,6 @@ catch (e) {
 // the variable e, is the error
 // result: Error - Custom Error
 // this catch block will only execute in case an error gets thrown
-
-
 
 
 try {
@@ -32,8 +28,6 @@ finally {
 // result: Error - Custom Error Finally done.
 
 
-
-
 try {
   var i = 42;
 }
@@ -45,8 +39,6 @@ finally {
 }
 // here the catch block does not run, but the finally block does
 // result: Finally done.
-
-
 
 
 try {

@@ -1,8 +1,6 @@
 // methods are functions that exist on an object
 
 
-
-
 class Car {
   constructor(id) {
     this.id = id;

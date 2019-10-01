@@ -2,8 +2,6 @@
 // Classes make this easy
 
 
-
-
 class Vehicle {
   constructor() {
     this.type = 'car';

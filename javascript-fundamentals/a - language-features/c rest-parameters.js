@@ -10,8 +10,6 @@
 // so we can send any number of arguments to a function and use a rest paramerter to collect them
 
 
-
-
 function sendCars (day, ...allCarIds) {
   allCarIds.forEach( id => console.log(id));
 }

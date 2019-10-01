@@ -1,8 +1,6 @@
 // The eval function accepts a string, it parses the string and executes the code
 
 
-
-
 let inputString = 'console.log("Hello");';
 eval(inputString);
 // result: Hello

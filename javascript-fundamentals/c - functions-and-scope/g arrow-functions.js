@@ -3,8 +3,6 @@ import { get } from "https";
 // arrow functions are more modern and concise in syntax
 
 
-
-
 let getId = () => 123;
 console.log( getId() );
 // result: 123
@@ -13,15 +11,11 @@ console.log( getId() );
 // and after that symbol, we have the return value
 // so its parameters, arrow function symbol and return value
 
-
-
 let getIda = _ => 123;
 console.log( getIda() );
 // result: 123
 // the underscore can be used in place of empty parenthesis
 // this usually signifies a variable that may or may not be used in the function
-
-
 
 
 let getId2 = prefix => prefix + 123;
@@ -31,14 +25,10 @@ console.log( getId2('ID: ') );
 // the return values is prefix + 123
 
 
-
-
 let getId3 = (prefix, suffix) => prefix + 123 + suffix;
 console.log( getId3('ID: ', '!') );
 // result: ID: 123!
 // because we are using multiple parameters, we need parenthesis
-
-
 
 
 let getId4 = (prefix, suffix) => {
@@ -48,8 +38,6 @@ let getId4 = (prefix, suffix) => {
 console.log( getId4('ID: ', '!') );
 // result: ID 123!
 // if you need more complex logic, you need the braces to get a function body, but you also need to use a return statement
-
-
 
 
 // Arrow functions do not have their own "this" value

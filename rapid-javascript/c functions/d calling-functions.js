@@ -3,15 +3,11 @@
 // jquery and angular use this all the time
 
 
-
-
 var updateZipCode = function () {
   console.log(this);
 };
 updateZipCode();
 // result: window
-
-
 
 
 var updateZipCode = function () {
@@ -22,8 +18,6 @@ updateZipCode.call({});
 // result: {}, the empty object
 
 
-
-
 var updateZipCode = function () {
   console.log(this);
 };
@@ -31,8 +25,6 @@ updateZipCode.call({zip: '11787'});
 // now we are using the call method and passing an object {}
 // result: {zip: '11787'},
 // the call passes the object which becomes the this in the function
-
-
 
 
 var updateZipCode = function () {
@@ -47,8 +39,6 @@ updateZipCode.call({zipCode});
 // its more common to do it this way
 
 
-
-
 var updateZipCode = function (newZip, country) {
   console.log(newZip + ' ' + country);
 };
@@ -60,8 +50,6 @@ updateZipCode.call(zipCode, '11888', 'us');
 // the call function can also pass arguments
 
 
-
-
 var updateZipCode = function (newZip, country) {
   console.log(newZip + ' ' + country);
 };
@@ -70,8 +58,6 @@ var zipCode = {
 };
 updateZipCode.apply(zipCode, ['11888', 'us']);
 // result: 1888 us
-
-
 
 
 // apply requires passing an array instead of a comma separated list

@@ -2,8 +2,6 @@
 // event listeners handle many of the problems with the older methods
 
 
-
-
 // <input id="submit1" type="button">
 var button = document.getElementById('submit1');
 button.addEventListener('click', function () {
@@ -12,8 +10,6 @@ button.addEventListener('click', function () {
 // result: Button Clicked
 // two main arguments to addEventListner: first is the name of the event, second is the handler function
 // this is probably the best way to setup events
-
-
 
 
 // <input id="submit1" type="button">
@@ -29,8 +25,6 @@ button.addEventListener('click', function () {
 // each one of these events gets run on a click, we can have as many listeners as we'd like
 
 
-
-
 // <input id="submit1" type="button">
 var button = document.getElementById('submit1');
 var submitHandler = function formSubmitHandler() {
@@ -39,8 +33,6 @@ var submitHandler = function formSubmitHandler() {
 button.addEventListener('click', submitHandler);
 // result: in formSubmitHandler()
 // this is a better way to call addEventListener, pass it a function expression instead of using an anonymous function
-
-
 
 
 // <input id="submit1" type="button">

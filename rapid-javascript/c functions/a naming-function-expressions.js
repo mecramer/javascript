@@ -5,8 +5,6 @@ console.log(typeof hireEmployee);
 // result: function
 
 
-
-
 // many devs are moving away from anonymous functions
 var hireEmployee = function myHireEmployeeFn (name) {
   throw ('Error');

@@ -2,8 +2,6 @@
 // classes are basically syntatic sugar over prototype based inheritance
 
 
-
-
 class Car {
   constructor(id) {
     this.id = id;

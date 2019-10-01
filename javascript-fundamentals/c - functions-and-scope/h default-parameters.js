@@ -2,8 +2,6 @@
 // we an do that now with ES2015
 
 
-
-
 let trackCar = function(carId, city = 'NY') {
   console.log(`Tracking ${carId} in ${city}.`);
 };

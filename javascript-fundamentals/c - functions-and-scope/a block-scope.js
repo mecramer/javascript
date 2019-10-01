@@ -8,8 +8,6 @@ console.log(message);
 // because var doesn't have block scope, resetting it to Equal changes it up the chain
 
 
-
-
 let message1 = 'Outside';
 if (5 === 5) {
   let message1 = 'Equal';

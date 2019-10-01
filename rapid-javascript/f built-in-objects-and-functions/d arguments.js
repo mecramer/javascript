@@ -2,8 +2,6 @@
 // but there is also an arguments property that can be used
 
 
-
-
 var validateValues = function () {
   console.log(arguments.length);
 };
@@ -12,16 +10,12 @@ validateValues(1, true, 'Settings');
 // even though the function has 0 arguments, we can still get access to any arguments passed to the function
 
 
-
-
 var validateValues = function () {
   console.log(arguments[0]);
 };
 validateValues(1, true, 'Settings');
 // result: 1
 // arguments can be treated as an array
-
-
 
 
 var validateValues = function () {

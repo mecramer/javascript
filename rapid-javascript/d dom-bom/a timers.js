@@ -4,19 +4,13 @@ console.log(window.screenLeft + ', ' + window.screenTop);
 // result: The coordinates of where the browser window resides on the screen
 
 
-
-
 console.log(window.innerWidth + ', ' + window.outerWidth);
 // result: innerWidth refers to the size of the page viewport
 // outerWidth includes the width of the frame in addition to the page
 
 
-
-
 window.open('https://www.google.com', '_blank');
 // result: a new browser window that opens with google.com
-
-
 
 
 // We're going to grab the current date and then log the seconds
@@ -28,8 +22,6 @@ setTimeout(function () {
 }, 1000);
 // result: will show the second of the time and then a second later runs again and shows the next second, ie 6, 7
 
-
-
 // clearTimeout will clear the setTimeout before it has a chance to run
 console.log(new Date().getSeconds());
 var id = setTimeout(function () {
@@ -37,8 +29,6 @@ var id = setTimeout(function () {
 }, 1000);
 clearTimeout(id);
 // result: you only get 1 number, we canceled the setTimeout before it got called
-
-
 
 
 // setInterval will call the past function over and over again

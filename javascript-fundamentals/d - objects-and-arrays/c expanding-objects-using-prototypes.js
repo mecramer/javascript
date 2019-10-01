@@ -1,8 +1,6 @@
 // another common use  of prototypes is to expand objects and give new functionality to all instances of an object
 // polyfills typically use prototyes in this way
 
-
-
 String.prototype.hello = function() {
   return this.toString() + ' Hello';
 };

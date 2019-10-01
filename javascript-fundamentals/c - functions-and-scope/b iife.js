@@ -8,15 +8,11 @@
 // this function does not have a name and nothing is calling it
 
 
-
-
 (function() {
   console.log('in function');
 }) ();
 // This can be turned into an IIFE by adding a parenthesis around the function and that using the () to initiate and
 // a semi colon to end the statement
-
-
 
 
 let app = ( function() {

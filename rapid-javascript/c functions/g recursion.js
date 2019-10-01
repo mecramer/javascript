@@ -26,8 +26,6 @@ fn(orgChart);
 // fn is the recursive call
 
 
-
-
 // Now we are assigning fn to a new variable, fn2
 // This is common, treating a function as a variable and reassigning it
 var orgChart = {
@@ -57,8 +55,6 @@ fn = null;
 // fn2(orgChart);
 // result: Michael, TypeError fn is not a function
 // fn2 still exists, which is why we get Michael, but we wiped otu fn1
-
-
 
 
 // we can fix this by naming the function

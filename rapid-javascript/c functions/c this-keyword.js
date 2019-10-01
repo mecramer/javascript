@@ -13,15 +13,11 @@ console.log(this.name);
 // result: Mark, we are in the global area
 
 
-
-
 var updateSalary = function () {
   console.log(this === window);
 };
 // updateSalary(); // commented out for running in node.js
 // result: true, the function is called from the global namespace
-
-
 
 
 var employee = {
@@ -32,8 +28,6 @@ var employee = {
 };
 employee.updateSalary();
 // result: object { name: 'Mark', updateSalary: [Function updateSalary] }
-
-
 
 
 var employee = {
@@ -50,8 +44,6 @@ employee.updateSalary();
 // because employee calls another function (fn), which has no object attached to it, so it refers back to the global object
 
 
-
-
 // new creates a new object and when it calls the constructor function, this gets assigned to the object that called it
 var Address = function (line1) {
   this.line1 = line1;
@@ -59,8 +51,6 @@ var Address = function (line1) {
 };
 var addr = new Address('123 State St.');
 // result: Address [line1: '123 State St.']
-
-
 
 
 // updateZipCode is attached to a real object, which gets assigned to this

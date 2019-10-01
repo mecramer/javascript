@@ -3,8 +3,6 @@
 // by convention, the name of the class starts with an upper case letter
 
 
-
-
 class Car {
 
 }

@@ -3,8 +3,6 @@
 // that's what closure is
 
 
-
-
 let app = ( function() {
   let carId = 123;
   let getId = function() {

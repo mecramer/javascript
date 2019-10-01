@@ -11,8 +11,6 @@ console.log(task.text);
 // result: Get this job done!
 
 
-
-
 // we wouldn't go to all that trouble just to set the value, but we can do other things
 // here we are allowing the value field to be editable and then editing it
 var task = {};
@@ -25,8 +23,6 @@ console.log(task.text);
 // result: Get this job done!... NOW!
 
 
-
-
 // enumerable is used in for in statements
 var task = {};
 Object.defineProperty(task, 'text', {
@@ -36,8 +32,6 @@ Object.defineProperty(task, 'text', {
 for (var f in task)
 console.log(f);
 // result: text
-
-
 
 
 // enumerable is used in for in statements
@@ -53,8 +47,6 @@ console.log(task.text);
 // result: TypeError: Cannot redefine property: text
 
 
-
-
 // getter function, we create a defineProperty on task called dueDate and define a getter function that returns
 // this._dueDate from task
 var task = {
@@ -67,8 +59,6 @@ Object.defineProperty(task, 'dueDate', {
 });
 console.log(task.dueDate);
 // result: 7/15/19
-
-
 
 
 // we can have setter functions as well, we get the date and then use setter to change the date
@@ -88,8 +78,6 @@ console.log(task.dueDate);
 // result: 8/4/19
 
 
-
-
 // defineProperties can be used to define more than one property at a time
 var task = {};
 Object.defineProperties(task, {
@@ -102,8 +90,6 @@ Object.defineProperties(task, {
 });
 console.log(task.text + ' Due: ' + task.dueDate);
 // result: New Task Due: 7/7/19
-
-
 
 
 // the getOwnPropertyDecriptor function lists all the information on what the object is

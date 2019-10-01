@@ -1,8 +1,6 @@
 // XHR using jQuery
 
 
-
-
 // assuming jquery is installed
 import $ from 'jquery';
 let promise = $.get('https://www.mockapi.io/projects/5d718e625acf5e001473063d',

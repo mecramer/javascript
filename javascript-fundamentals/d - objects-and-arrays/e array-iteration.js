@@ -1,8 +1,6 @@
 // you can iterate through an array using a for loop, but there are easier ways
 
 
-
-
 let carIds = [
   {carId: 123, style: 'sedan'},
   {carId: 456, style: 'convertible'},
@@ -22,8 +20,6 @@ carIds.forEach((car, index) => console.log( car, index));
 // the second call has 2 parameters, this will log the object and its index number in the array
 
 
-
-
 // we can also filter an array
 let carIds1 = [
   {carId: 123, style: 'sedan'},
@@ -39,8 +35,6 @@ console.log(convertibles);
 // the function passes car and checks to see if the car.style is convertible
 
 
-
-
 // another method is called .every
 let carIds2 = [
   {carId: 123, style: 'sedan'},
@@ -53,8 +47,6 @@ let result = carIds2.every (
 console.log(result);
 // result: true
 // this is validating that the car id exists on every element
-
-
 
 
 // another method is called .find

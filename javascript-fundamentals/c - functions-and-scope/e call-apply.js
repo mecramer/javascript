@@ -6,8 +6,6 @@
 // this is important for object oriented scenarios
 
 
-
-
 let o = {
   carId: 123,
   getId: function() {
@@ -19,8 +17,6 @@ console.log( o.getId.call(newCar) );
 // result: 456, not 123
 // here we are changing the context of this to newCar
 // instead of calling o.getId directly, we use a special function called call to change the context
-
-
 
 
 // apply is similar to call, the only difference is that with apply, you can pass arguments

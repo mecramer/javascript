@@ -9,8 +9,6 @@
 // destructuring an array means taking the array and assigning it to variables in a short, concise syntax
 
 
-
-
 // let carIds = [1, 2, 5];
 // let car1, remainingCars;
 // [car1, ...remainingCars] = carIds;
@@ -19,8 +17,6 @@
 // we declare two variables without initializing, car1 and remainingCars
 // then in the next line we destructure the array, the first element of carIds gets stored in car1
 // and the rest get put in a rest parameter, remainingCars, which will be 2 and 5
-
-
 
 
 let carIds = [1, 2, 5];

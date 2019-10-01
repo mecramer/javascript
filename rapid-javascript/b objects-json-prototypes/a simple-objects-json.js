@@ -5,8 +5,6 @@ console.log(project.name);
 // result: Project Phoenix
 
 
-
-
 // an object can hold data, strings, functions, booleans...
 var project = new Object();
 project.name = "Project Phoenix";
@@ -18,8 +16,6 @@ console.log(project.updateDueDate());
 // result: true
 
 
-
-
 // brackets can be used for object properties
 var project = new Object();
 project.name = "Project Phoenix";
@@ -29,8 +25,6 @@ project.updateDueDate = function() {
 };
 console.log(project["securityLevel"]);
 // result: 15
-
-
 
 
 // a variable can be created to access a field
@@ -45,15 +39,11 @@ console.log(project[field]);
 // result: 15
 
 
-
-
 // here, we can use JSON to create an object
 var project = {};
 project.name = "Project Phoenix";
 console.log(project.name);
 // result: Project Phoenix
-
-
 
 
 // using JSON, we can create the properties for the ojbect
@@ -68,8 +58,6 @@ console.log(project.name);
 // result: Project Phoenix
 
 
-
-
 // we can also have arrays in our objects
 var project = {
   name: "Project Phoenix",
@@ -81,8 +69,6 @@ var project = {
 };
 console.log(project.team[2]);
 // result: Buffy
-
-
 
 
 // we can have objects within objects

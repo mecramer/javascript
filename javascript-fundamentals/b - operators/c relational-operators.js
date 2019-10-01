@@ -1,8 +1,6 @@
 // relational operators: >  <  >=   <=
 
 
-
-
 let s1 = 'Zoo';
 let s2 = 'alphabet';
 
@@ -14,8 +12,6 @@ else {
 }
 // result: true
 // reason, uppercase letters come first, based on ASCII characters
-
-
 
 
 let z1 = 'Zoo';

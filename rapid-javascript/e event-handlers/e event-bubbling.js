@@ -4,8 +4,6 @@
 // we need to get control over this bubbling mechanism
 
 
-
-
 // <div id="div1" style="width: 200px; height: 200px; background-color: blue;">
 //   <div id="div2" style="width: 100px; height: 100px; background-color: red;"></div>
 // </div>
@@ -19,8 +17,6 @@ div2.addEventListener('click', clickHandler, false);
 // result when we click inside div2: div2 div1, since its inside div1, both events get processed
 // we've set up add event listeners to the 2 divs
 // the false argument allows for the bubbling
-
-
 
 
 // <div id="div1" style="width: 200px; height: 200px; background-color: blue;">
@@ -37,8 +33,6 @@ div2.addEventListener('click', clickHandler, true);
 // this is sometimes called the capture phase, where the parent captures the event before its children do
 
 
-
-
 // <div id="div1" style="width: 200px; height: 200px; background-color: blue;">
 //   <div id="div2" style="width: 100px; height: 100px; background-color: red;"></div>
 // </div>
@@ -53,8 +47,6 @@ div2.addEventListener('click', clickHandler, true);
 // result when we click inside div2: div1
 // remember, event is the first thing passed into the eventListener
 // stopPropagation(), div1 gets to handle the event and then stops handling the event because of stopPropagation()
-
-
 
 
 // <div id="div1" style="width: 200px; height: 200px; background-color: blue;">

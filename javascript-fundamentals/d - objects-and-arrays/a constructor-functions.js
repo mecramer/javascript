@@ -2,8 +2,6 @@
 // it looks like a regular function, but behaves very differently
 
 
-
-
 // function Car() {
 
 // }
@@ -16,8 +14,6 @@
 // they are still used
 
 
-
-
 function Car(id) {
   this.carId = id;
 }
@@ -26,8 +22,6 @@ console.log( car);
 // result: 123
 // when you use the new keyworkd, the function gets a brand new, empty context
 // its important to use the this, this.carID instead of just carId = id
-
-
 
 
 function Car1(id) {

@@ -6,14 +6,10 @@
 // var1 << 1; this will shift the value to the left by 1 bit
 
 
-
-
 let year = 1964;
 year += 10;
 console.log(year);
 // result: 1974
-
-
 
 
 let year1 = 1964;
