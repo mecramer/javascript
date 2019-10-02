@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Data Attribute for Animation</title>
+  <style>
+  body {background: #f3f3f3;}
+  div.rockets {
+    position: absolute;
+    background: url(rocket.png) no-repeat;
+    width: 125px;
+    height: 72px;
+    left: 0;
+    transition: left 0s linear 0s;
+  }
+/* data attributes can be targeted in CSS */
+  div.rockets[data-altitude="100"] {
+    transform: rotate( 10deg );
+  }
+  </style>
+  <script>
+    let rockets, altitude, speed, distance;
+    function activateRockets() {
+      // get a nodelist of all divs with rocket class and assign to rockets
+      rockets = document.querySelectorAll('div.rockets');
+      // run a for loop over the nodelist
+      for (var i = 0; i < rockets.length; i++) {
+        // first we get the altitude, speed and distance for the rocket using the dataset property
+        altitude = rockets[i].dataset.altitude;
+        speed = rockets[i].dataset.speed;
+        distance = rockets[i].dataset.rocketDistance;
+        // use JS to set CSS properties based on the numbers passed
+        rockets[i].style.bottom = altitude + 'px';
+        rockets[i].style.transitionDuration = speed + 's';
+        rockets[i].style.left = distance + 'px';
+      }
+    }
+    // on page load, run the activateRockets function
+    window.addEventListener("load", activateRockets);
+  </script>
+</head>
+
+<body>
+  <div class="rockets" data-altitude="100" data-speed="3.5" data-rocket-distance="700"></div>
+  <div class="rockets" data-altitude="200" data-speed="5.0" data-rocket-distance="800"></div>
+</body>
+
+</html>

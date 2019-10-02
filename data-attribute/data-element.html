@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dataset</title>
+  </head>
+
+  <body>
+    <h2>Dataset</h2>
+    <!-- we define an alements custom data attributes
+    format is data- and then our custom name
+    data properties are name and started-coding-at
+    and data values are "Mark" and "30" -->
+    <div id="myDiv" data-name="Mark" data-started-coding-at="30">
+      Sample Text
+    </div>
+    <script>
+      const myDiv = document.getElementById("myDiv");
+      console.log(myDiv.dataset);
+      // result: a DOMStringMap object
+      // name: "Mark"
+      // startedCodingAt: "30"
+      // notice for started coding that JS changed the dashes to camel case
+
+      myDiv.dataset.name = "Volker";
+      // this would override the name value from "Mark" to "Volker"
+
+      myDiv.removeAttribute('data-name');
+      // this would remove the whole name attribue
+    </script>
+  </body>
+</html>

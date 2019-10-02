@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Data Attributes</title>
+</head>
+
+<body>
+  <!-- 
+Data Attributes
+
+* Allows the storiing fo extra information on standard html elements.
+* A data attribute is any attribute that starts with data-(data-term).
+* JavaScript provides a simple syntax for retreiving the data: element.dataset.term.
+* IE11 has support.
+-->
+  <div id="content">
+    <h1>Data Attributes</h1>
+    <div class="bullets">
+      <ul>
+        <li id="b1" data-show="true" data-text="Some possible elements: div, header, li, p, img.">Allows the storiing fo extra information on standard html elements.</li>
+        <li id="b2" data-show="false">A data attribute is any attribute that starts with data-(data-term).</li>
+        <li id="b3" data-show="false">JavaScript provides a simple syntax for retreiving the data: element.dataset.term.
+        </li>
+        <li id="b4" data-show="true" data-text="For previous versions of IE, use getAttribute() to retrieve data.">IE11 has support.</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    // grabs all li's on the page as a nodelist (an object that contains a list)
+    let lis = document.querySelectorAll("li");
+    console.log(lis);
+
+    // convert the nodelist to an array, though this is not necessary as forEach will run on a nodelist as well
+    let lis_array = Array.from(lis);
+
+    // use forEach to cycle through the array and run an anonymous function on each item
+    lis_array.forEach(function(elem) {
+      // add an eventlistener that runs an anonymous function on the item when it is clicked
+      elem.addEventListener("click", function(e) {
+        // if dataset is set to show, change the text with the text dataset item
+        if(elem.dataset.show === "true") {
+          elem.innerHTML = elem.dataset.text;
+        }
+      })
+    })
+
+
+  </script>
+</body>
+
+</html>
