@@ -1,0 +1,14 @@
+$backgroundColor: #eeccff;
+$textColor: #000;
+$linkColor: red;
+
+body {
+  background: $backgroundColor;
+}
+
+p {
+  color: $textColor;
+}
+a {
+  color: $linkColor;
+}
