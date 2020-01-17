@@ -7,9 +7,6 @@
 // "FizzBuzz" for numbers that are divisible by both 3 and 5 
 // (and still print "Fizz" or "Buzz" for numbers divisible by only one of those).
 
-// (This is actually an interview question that has been claimed to weed out a significant percentage 
-//   of programmer candidates. So if you solved it, your labor market value just went up.)
-
 for (let numbers = 1; numbers < 101; numbers++) {
   if (numbers % 3 == 0) {
     if (numbers % 5 == 0) {
