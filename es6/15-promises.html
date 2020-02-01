@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // when something is asynchonous, it means that some kind of waiting is happening
+  // creating a promise:
+  // the function takes seconds and returns a new promise
+  // resolve occurs whenever the promise is resolved
+  // setTimeout takes in a callback function (resolve) and the milliseconds to wait
+    // const delay = seconds => {
+    //   return new Promise(resolve => {
+    //     setTimeout(resolve, seconds *1000);
+    //   });
+    // };
+
+    // console.log('zero seconds');
+    // delay(1).then(() => console.log('one second'));
+    // delay(5).then(() => console.log('five seconds'));
+
+    // now, lets add a 
+    // const delay = seconds => {
+    //   return new Promise(resolve => {
+    //     setTimeout(
+    //       () => resolve(`${seconds} second delay is up`), 
+    //       seconds *1000);
+    //   });
+    // };
+
+    // console.log('zero seconds');
+    // delay(1).then( msg => console.log(msg));
+    // delay(4).then( msg => console.log(msg));
+
+
+    const delay = seconds => {
+      return new Promise((resolve, reject) => {
+        if (typeof seconds !== 'number') {
+          reject(new Error('Argument seconds must be a number'));
+        }
+        setTimeout(
+          () => resolve(`${seconds} second delay is up`), 
+          seconds *1000);
+      });
+    };
+
+    // .then's can be chained, kind of like an assembly line
+    console.log('zero seconds');
+    delay(3).then( msg => msg.toUpperCase())
+            .then(msg => `${msg}!!!!!`)
+            .then(msg => console.log(msg));
+  </script>
+  
+  <title>Promises</title>
+</head>
+<body>
+</body>
+</html>

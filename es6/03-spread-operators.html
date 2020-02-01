@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // the spread operator can turn elements of an array into arguments of a function call
+  // or into elements of an array literal
+    var cats = ['tabby', 'siamese,', 'persian'];
+    var dogs = ['golden retriever', 'pug', 'schnauzer'];
+    
+    // if we want to add cats and dogs to animals, we can use the spread array
+    // if we don't use the spread (...), they would be added as sub arrays in animals
+    var animals = ['whale', 'giraffe', ...cats, 'snake', ...dogs, 'coyote'];
+    console.log(animals);
+    
+
+  </script>
+  
+  <title>Spread Operators</title>
+</head>
+<body>
+</body>
+</html>

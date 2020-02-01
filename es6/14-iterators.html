@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // Processing items in a collection is very common
+  // Some iterators aree for loops, while loops, and map()
+  // custom iteration behavior is new in ES6
+  // new protocols in ES6:
+  //    Iterable - JS objects define their own behavior
+  //    Iterator - a standard way to produce a sequence of values
+  // an object is an iterator when it understands how to access each item in a collection
+  // it also keeps track of where its currently positioned in the collection
+
+  // iteration behavior of a string
+    var title ='ES6';
+    // Symbol.iterator is a method that returns the default iterator of an object or a factory of iterators
+    console.log(typeof title[Symbol.iterator]);
+    // result: function
+
+    // lets use the symbol iterator
+    var iterateIt = title[Symbol.iterator]();
+    console.log(iterateIt.next());
+    console.log(iterateIt.next());
+    console.log(iterateIt.next());
+    console.log(iterateIt.next());
+    // result: {value: "E", done: false}
+    //         {value: "S", done: false}
+    //         {value: "6", done: false}
+    //         {value: undefined, done: true}
+    // basically, its looping through the string and if we have more letters, done will be false
+
+    // you can also create your own iterator
+    // tableReady will take in an array (waitingList)
+    function tableReady(arr) {
+      var nextIndex = 0;
+      // we return a new definition for the next function
+      return {
+        next() {
+          if(nextIndex < arr.length) {
+            // return an object where value is set to arr.shift(), which pops  off that first item
+            return {value: arr.shift(), done: false}
+          }
+          else {
+            return {done: true}
+          }
+        }
+      }
+    }
+
+    var waitingList = ['Kurt', 'Sara', 'Jeffrey', 'Lisa'];
+    var iterateList = tableReady(waitingList);
+
+    console.log(`${iterateList.next().value}, your table is ready`);
+    console.log(`${iterateList.next().value}, your table is ready`);
+    console.log(`${iterateList.next().value}, your table is ready`);
+    console.log(`${iterateList.next().value}, your table is ready`);
+    console.log(`Is this finished? ${iterateList.next().done}`);
+
+
+  </script>
+  
+  <title>Iterators</title>
+</head>
+<body>
+</body>
+</html>

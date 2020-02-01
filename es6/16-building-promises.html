@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // often we use promises to load data
+    
+    // spacePeople returns a promise
+    const spacePeople = () => {
+      // resolves and rejects are the arguments to the promise
+      return new Promise((resolves, rejects) => {
+        // source for the information
+        const api = 'http://api.open-notify.org/astros.json';
+        // requesting the data
+        const request = new XMLHttpRequest();
+        // request type
+        request.open('GET', api);
+        // conditional check promise
+        request.onload = () => {
+          if(request.status === 200) {
+            resolves(JSON.parse(request.response));
+          } else {
+            rejects(Error(request.statusText));
+          }
+        };
+        request.onerror = err => rejects(err);
+        // send the request
+        request.send();
+      })
+    };
+
+    // now use the request, .then fires when promise is resolved
+    spacePeople().then(
+      spaceData => console.log(spaceData),
+      err => console.error(
+        new Error('Cannot load space people')
+      )
+    );
+
+    // this api call could be simplified using fetch
+
+  </script>
+  
+  <title>Building Promises</title>
+</head>
+<body>
+</body>
+</html>

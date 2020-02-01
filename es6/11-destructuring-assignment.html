@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // destructuring assignment gives us an easy way to extract data from arrays and objects and assign to variables
+  // this is destructuring the array
+  var [first,,, fourth,] = ['Baltimore', 'Washington DC', 'Boston', 'New York', 'Miami'];
+  
+  console.log(first);
+  console.log(fourth);
+
+  // destructuring is also used for objects
+  var {title, price, description} = {
+    title: 'Reuben',
+    price: 7,
+    description: 'Cleveland\'s favorite sandwich',
+    ingrediants: ['bread', 'corned beed', 'dressing', 'sauerkraut', 'chesee']
+  };
+  
+  console.log(title);
+  console.log(price);
+  console.log(description);
+
+  var vacation = {
+    destination: 'Chile',
+    travelers: 2,
+    activity: 'swimming',
+    cost: 4000
+  }
+
+  function vacationMarketing({destination, activity}) {
+    return `Come to ${destination} and do some ${activity}`;
+  }
+
+  // we're passing our object (vacation) and passing into the vacationMarketing function, so it can be parsed
+  // we access all the values by using variables
+  console.log(vacationMarketing(vacation));
+  </script>
+  
+  <title>Destructuring Assignment</title>
+</head>
+<body>
+</body>
+</html>

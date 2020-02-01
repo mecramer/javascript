@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // A getter is a method that gets the value of a specific property
+  // A setter is a method that sets the value of a specific property
+
+    var attendance = {
+      _list: [],
+      // this is a setter which adds names to _list
+      set addName(name) {
+        this._list.push(name);
+      },
+      // this is a getter which gets the list in a comma separated string
+      get list() {
+        return this._list.join(', ');
+      }
+    };
+
+    // call the setter to add a name to _list
+    attendance.addName = 'Joanne';
+    // attendance.list returns a string
+    console.log('List getter: ', attendance.list);
+    // attendance._list returns an array
+    console.log('Underscore list (prop)', attendance._list);
+
+    attendance.addName = 'Anna';
+    attendance.addName = 'Charlie';
+
+    console.log(attendance.list);
+
+    console.log('---------- Classes -----------');
+    
+    // we can also use getters and setters in classes
+    class Hike {
+      constructor(distance, pace) {
+        this.distance = distance;
+        this.pace = pace;
+      }
+      // this is a getter which uses the calcLength method
+      get lengthInHours() {
+        return `${this.calcLength()} hours`
+      }
+      calcLength() {
+        return this.distance / this.pace;
+      }
+    }
+
+    const mtTallac = new Hike(10, 2);
+    console.log(mtTallac.lengthInHours);
+
+  </script>
+  
+  <title>Getters and Setters</title>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+    // A map object iterates its elements in insertion order, a for...of loop returns an array of [key, value]
+    // for each iteration
+
+    // A map is bascially an object with these differences
+    // in a map, any value type (string, number, array, function, etc) can be used as a key or value
+    // why use:
+    // 1. Use something other than a string as a key
+    // 2. Utilize key value pairs that are always the same value
+    // 3. Need to iterate in ordeer
+
+    var course = new Map();
+    course.set('react', {description: 'ui'});
+    course.set('jest', {description: 'testing'});
+
+    console.log(course);
+    console.log(course.react); // doesn't work, we can't use dot notation here
+    console.log(course.get('react'));
+
+    var details = new Map([
+      [new Date(), 'today'],
+      ['items', [1, 2]]
+    ])
+
+    console.log(details.size);
+    details.forEach(function(item) {
+      console.log(item);
+    })
+  </script>
+  
+  <title>Map</title>
+</head>
+<body>
+</body>
+</html>

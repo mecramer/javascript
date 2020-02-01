@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+    // these default values (5 and 7) are used if the parameters aren't passed
+    // these defaults are only used when a parameter(s) is not passed to the function
+    function add (x = 5, y = 7) {
+      console.log(x + y);
+    }
+    add();
+
+    function haveFun (activityName = 'hiking', time = 3) {
+      console.log(`Today I will go ${activityName} for ${time} hours`);
+    }
+    haveFun();
+  </script>
+  
+  <title>Default Function Parameters</title>
+</head>
+<body>
+</body>
+</html>

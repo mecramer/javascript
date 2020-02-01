@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+    // old way
+    var studentList = function(students) {
+      console.log(students);
+    };
+    // arrow functions way, more compact and readable. used a lot with map and filter
+    var studentList2 = students => console.log(students);
+
+    studentList(['joe', 'bob', 'kara']);
+    studentList2(['mary', 'kelsie', 'pamela']);
+  </script>
+  
+  <title>Arrow Functions</title>
+</head>
+<body>
+</body>
+</html>
