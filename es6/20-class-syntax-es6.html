@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // classes are a good way to encourage reusability
+
+    class Vehicle {
+      // creating a constructor function
+      constructor(description, wheels) {
+        this.description = description;
+        this.wheels = wheels;
+      }
+      // create a method
+      describeYourself() {
+        console.log(`I am a ${this.description} with ${this.wheels} wheels`);
+      }
+    }
+
+    // create a new instance of the class
+    var coolSkiVan = new Vehicle('cool ski van', 4);
+
+    // all the describeYouself method of the Vehicle class
+    coolSkiVan.describeYourself();
+
+  </script>
+  
+  <title>ES6 Class Syntax</title>
+</head>
+<body>
+</body>
+</html>

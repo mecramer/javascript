@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // the for...of loop can loop over iteratable objects like arrays, strings, maps and sets
+    // to loop through a string
+    for ( let letter of 'JavaScript' ) {
+      console.log(letter);
+    }
+
+    // now to loop through an array
+    var topics = ['JavaScript', 'Node', 'React'];
+    for ( let topic of topics ){
+      console.log(topic);
+    }
+
+    // but the most realistic need for the for..of loop is to loop through the new data types maps and sets
+    var web = new Map();
+    web.set('HTML', '/class/html');
+    web.set('CSS', '/class/css');
+    web.set('JavaScript', '/class/javascript');
+    web.set('Node', '/class/node');
+
+    // the for statement will loop through and return each of these pairs
+    for ( let topic of web ) {
+      console.log(topic);
+    }
+    
+    // we can also use it to iterate over keys
+    for ( let topic of web.keys() ) {
+      console.log(topic, 'is the course name');
+    }
+
+    // we can also use it to iterate over values
+    for ( let topic of web.values() ) {
+      console.log('the course description can be found at', topic);
+    }
+
+    for ( let course of web.entries()) {
+      console.log(course);
+    }
+
+  </script>
+  
+  <title>For...of Loop</title>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // Symbols are a new primitive type in ES6
+  // They are often used as unique IDs because they won't conflict with object keys that are strings
+  // Define customized iteration behavior
+
+    const id = Symbol(); // Symbol() is a factory function (functions that create things)
+    const courseInfo = {
+      title: 'ES6',
+      topics: ['babel', 'syntax', 'functions', 'classes'],
+      id: 'js-course'
+    };
+
+    // now we want to set the value of the id and attach to the courseInfo object
+    courseInfo[id] = 39823;
+    console.log(courseInfo);
+    // the idea with symbol is that it stays intact even if someone else adds an id
+  </script>
+  
+  <title>Symbols</title>
+</head>
+<body>
+</body>
+</html>

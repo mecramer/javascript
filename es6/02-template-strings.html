@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+    function createEmail (firstName, purchasePrice) {
+      var shipping = 5.95;
+      // the backtics take place of quotes, variables are put inside ${}, formatting like line breaks do not need /n
+      // note the double $$, the first ones there $ are actually part of the text string
+      console.log (
+        `
+        Hi ${firstName}, Thanks for buying from us!
+        Total: $${purchasePrice};
+        Shipping: $${shipping};
+        Grand Total: $${purchasePrice + shipping};
+        `
+      );
+    }
+    createEmail('Gina', 100);
+  </script>
+  
+  <title>Template Strings</title>
+</head>
+<body>
+</body>
+</html>

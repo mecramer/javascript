@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // arrow functions can help us deal with the scope of the 'this' keyword
+    // var person = {
+    //   first: 'Doug',
+    //   actions: ['bike', 'hike', 'ski', 'surf'],
+    //   printActions: function() {
+    //     this.actions.forEach(function(action) {
+    //       var str = this.first + ' likes to ' + action;
+    //       console.log(str);
+    //     });
+    //   }
+    // };
+    // person.printActions();
+    // result: this.first will say it is not defined
+
+    // one way to fix the 'this' problem is to assign this to another variable in the parent function
+    // var person = {
+    //   first: 'Doug',
+    //   actions: ['bike', 'hike', 'ski', 'surf'],
+    //   printActions: function() {
+    //     var _this = this;
+    //     this.actions.forEach(function(action) {
+    //       var str = _this.first + ' likes to ' + action;
+    //       console.log(str);
+    //     });
+    //   }
+    // };
+    // person.printActions();
+
+    // another way to fix the 'this' problem is use bind
+    // var person = {
+    //   first: 'Doug',
+    //   actions: ['bike', 'hike', 'ski', 'surf'],
+    //   printActions: function() {
+    //     this.actions.forEach(function(action) {
+    //       var str = this.first + ' likes to ' + action;
+    //       console.log(str);
+    //     }.bind(this));
+    //   }
+    // };
+    // person.printActions();
+
+    // now we are going to handle with an arrow function and also update the printActions method
+    // 1. remove the ': function' for printActions
+    // 2. remove 'function' of function(action)
+    // 3. remove the parenthesis around the action argument, since there is just one argument
+    // 4. add the '=>' after 'action'
+    // 5. remove '.bind(this)'
+    var person = {
+      first: 'Doug',
+      actions: ['bike', 'hike', 'ski', 'surf'],
+      printActions () {
+        this.actions.forEach(action => {
+          var str = this.first + ' likes to ' + action;
+          console.log(str);
+        });
+      }
+    };
+    person.printActions();
+    
+  </script>
+  
+  <title>Arrow Functions and the 'this' Scope</title>
+</head>
+<body>
+</body>
+</html>

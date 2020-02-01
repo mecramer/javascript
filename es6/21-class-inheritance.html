@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // classes are a good way to encourage reusability
+
+    class Vehicle {
+      // creating a constructor function
+      constructor(description, wheels) {
+        this.description = description;
+        this.wheels = wheels;
+      }
+      // create a method
+      describeYourself() {
+        console.log(`I am a ${this.description} with ${this.wheels} wheels`);
+      }
+    }
+
+    // create a new instance of the class
+    var coolSkiVan = new Vehicle('cool ski van', 4);
+
+    // all the describeYouself method of the Vehicle class
+    coolSkiVan.describeYourself();
+
+    // we want to create a new class that will inherit from the Vehicle class
+    // this is a process called extending the class
+    // this makes sure the new class has the same properties as Vehicle, description and wheels and method, describeYourself
+    class SemiTruck extends Vehicle {
+      // use constructor to create the class
+      constructor() {
+        // super refers back to the Vehicle class where we pass description and wheels
+        super('semi truck', 18)
+      }
+    }
+
+    // create a new instancee of the SemiTruck class
+    var groceryStoreSemi = new SemiTruck();
+
+    groceryStoreSemi.describeYourself();
+
+    // the idea of class inheritance is simple, we create one super class and then can extend it for reuse in different ways
+
+  </script>
+  
+  <title>Class Inheritance</title>
+</head>
+<body>
+</body>
+</html>

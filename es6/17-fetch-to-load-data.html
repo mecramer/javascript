@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // loading data is something that has to be done often
+
+    // there is a fetch function that is a simplified way for loading
+    // fetch works natively in most browsers, there are also node packages that work with fetch
+    // fetch takes the url of the api and returns the entire response object
+    // fetch('http://api.open-notify.org/astros.json')
+    //   .then(res => res.json())
+    //   .then(console.log);
+
+    // fetch can also be returned from functions
+    const getPeopleInSpace = () => 
+      fetch('http://api.open-notify.org/astros.json')
+        .then(res => res.json());
+
+    // function to get the names in a nice list
+    const spaceNames = () =>
+      getPeopleInSpace()
+        // get the people from the json list
+        .then(json => json.people)
+        // map over the people to return the names
+        .then(people => people.map(p => p.name))
+        // join the array of names separated by a comma and space
+        .then(names => names.join(', '));
+    
+    spaceNames()
+      .then(console.log);
+
+
+  </script>
+  
+  <title>Loading Data with Fetch</title>
+</head>
+<body>
+</body>
+</html>

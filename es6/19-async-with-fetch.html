@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type='text/babel'>
+  // fetch is by definition asynchronous, we request some data and wait to receive it back
+
+    // creating an IIFE that takes in a loginName
+    // async keyword identifies it as an asynchronous function
+    (async(loginName) => {
+      // try, catch can make it easier to track errors
+      try {
+        // await keyword says wait to get this before moving on
+        var response = await fetch(`https://api.github.com/users/${loginName}/followers`);
+        // wait for the response to be turned into json
+        var json = await response.json();
+        // map over the json response and return an array of user logins
+        var followerList = json.map(user => user.login);
+        // console.log the followers
+        console.log(followerList);
+      } catch(e) {
+        console.log('Data didn\'t load', e);
+      }
+    }) ('eveporcello');
+
+    
+
+  </script>
+  
+  <title>Async with Fetch</title>
+</head>
+<body>
+</body>
+</html>
