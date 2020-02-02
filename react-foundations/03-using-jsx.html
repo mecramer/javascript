@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Project</title>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <!-- For JSX, we need to have babel running -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type='text/babel'>
+    // JSX, or JavaScript as XML, is a language extension that allows you to write tags directly in JavaScript
+    // This is cleaner than createElement and doesn't lead to as many bugs because of nesting errors
+    ReactDOM.render(
+      <h1>Hello World</h1>,
+      // and then where do i want to render this element
+      document.querySelector('#root')
+    );
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Project</title>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <!-- For JSX, we need to have babel running -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+  .heading {
+    color: orange;
+  }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type='text/babel'>
+  // props is an object in React that contains properties about the component
+  // with props we can display dynamic data within a component
+    // props are sent within the component object
+    // the props could be destructered for brevity
+    // by passing library, message instead of props as the argument
+    // and then referring to them as library instead of props.library and message instead of props.message
+    // you can think of a React component as a function that takes in some data as an argument
+    //   and returns React elements or a user interface
+    const Hello = (props) => {
+      console.log(props);
+      return (
+        <div className='heading'>
+          <h1>Welcome to {props.library}</h1>
+          <p>{props.message}</p>
+        </div>
+      )
+    };
+    
+    ReactDOM.render(
+      // props (proerties) can be passed to the component from the render function, here its library and message
+      <Hello library='React' message='Enjoy!' />,
+      document.querySelector('#root')
+    );
+  </script>
+</body>
+</html>
+

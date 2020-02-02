@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Project</title>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <!-- For JSX, we need to have babel running -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+  .heading {
+    color: orange;
+  }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type='text/babel'>
+    // create two activities to choose from
+    const Lake = ({name}) => <h1>{name}</h1>;
+    const SkiResort = ({name}) => <h1>{name}</h1>;
+
+    // here we are going to conditionally render a component
+    // using a function component rather than a class component
+    // using a ternary operator to choose what to do if its summer
+    // if its summer is set to true, Lake Tahoe will be sent, if not, Alpine Meadows gets sent
+    const App = ({summer}) => (
+      <div>
+        {summer 
+          ? <Lake name='Lake Tahoe' /> 
+          : <SkiResort name='Alpine Meadows' />
+        }
+      </div>  
+    )
+    
+    // Season is sent in the App render method
+    ReactDOM.render(
+      <App summer={true} />,
+      document.querySelector('#root')
+    );
+  </script>
+</body>
+</html>
+

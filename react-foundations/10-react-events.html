@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Project</title>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <!-- For JSX, we need to have babel running -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+  .heading {
+    color: orange;
+  }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type='text/babel'>
+    const Lake = ({name}) => <h1>{name}</h1>;
+
+    class App extends React.Component {
+      // initial setting up of state
+      state = {
+        loggedIn: false
+      }
+      // setState is a React method to control state, usng a local method to setState when this function is called
+      logIn = () => this.setState({loggedIn: true})
+      logOut = () => this.setState({loggedIn: false})
+      render() {
+        return (
+          <div>  
+            <button onClick={this.logIn}>Log In</button>
+            <button onClick={this.logOut}>Log Out</button>
+            <div>
+              The user is {
+              this.state.loggedIn 
+              ? 'logged in' 
+              : 'not logged in'
+            }.</div>
+            <Lake name='Lake Tahoe' />
+            <Lake name='Angora Lake' />
+            <Lake name='Shirley Tahoe' />
+          </div>
+        )
+      }
+    };
+    
+    ReactDOM.render(
+      <App />,
+      document.querySelector('#root')
+    );
+  </script>
+</body>
+</html>
+

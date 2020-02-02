@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Project</title>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <!-- For JSX, we need to have babel running -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+  .heading {
+    color: orange;
+  }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type='text/babel'>
+    const Lake = ({name}) => <h1>{name}</h1>;
+
+    class App extends React.Component {
+      // state is an important concept in React
+      // when a components state changes, the render() function will be called again to re-render the state change
+      // we will use events to change state
+      state = {
+        loggedIn: true
+      }
+      // using a JSX expression to create a ternary operator checking if user is logged in
+      render() {
+        return (
+          <div>  
+            <div>The use is {this.state.loggedIn ? 'logged in' : 'not logged in'}.</div>
+            <Lake name='Lake Tahoe' />
+            <Lake name='Angora Lake' />
+            <Lake name='Shirley Tahoe' />
+          </div>
+        )
+      }
+    };
+    
+    ReactDOM.render(
+      <App />,
+      document.querySelector('#root')
+    );
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Project</title>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <!-- For JSX, we need to have babel running -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+  .heading {
+    color: orange;
+  }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type='text/babel'>
+    // react represents a UI element through a component
+    // a component lets you put together a user interface with independent, reusabel pieces
+    // here we have a component (Hello) that is a function that returns some UI
+    // component names MUST begin with an uppercase letter
+    // they can be wrapped in multiple ways, with ( ) or with {( )} or with nothing
+    // if you wrap with { }, you must return it
+    const Hello = () => {
+      return (
+        <div className='heading'>
+          <h1>Welcome to React</h1>
+        </div>
+      )
+    };
+    
+    ReactDOM.render(
+      // you render a component by using its name as a tag
+      <Hello />,
+      document.querySelector('#root')
+    );
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Project</title>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <!-- For JSX, we need to have babel running -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+  .heading {
+    color: orange;
+  }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type='text/babel'>
+    // React can update the component as the items in this list change
+    const lakeList = [
+    'Echo Lake', 
+    'Maud Lake', 
+    'Cascade Lake'
+  ];
+
+    // pass lakes into the App component
+    // this will create a list item for each item in the lakesList array
+    //   using the map method to loop through the array
+    //   we are also using i to give each item a key to follow Reacts suggestion
+    const App = ({lakes}) => (
+      <ul>
+        {lakes.map((lake, i) =>
+          <li key={i}>{lake}</li>
+        )}
+      </ul>
+    )
+    
+    // take the lakeList array and pump it into the App renderer
+    ReactDOM.render(
+      <App lakes={lakeList} />,
+      document.querySelector('#root')
+    );
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Project</title>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <!-- For JSX, we need to have babel running -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+  .heading {
+    color: orange;
+  }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type='text/babel'>
+    // now we want to iterate over an object instead of strings
+    const lakeList = [
+      {id: 1, name: 'Lake Michigan', trailhead: 'Echo Lake'}, 
+      {id: 2, name: 'Lake Huron', trailhead: 'Wright\'s Lake'},  
+      {id: 3, name: 'Lake Ontario', trailhead: 'Bayview'}
+    ];
+
+    // because its an object, we need to target the key (ie lake.name) to access the right property
+    // because we have ids in the object, we don't need to add the iterating i argument to create them
+    const App = ({lakes}) => (
+      <ul>
+        {lakes.map( lake =>
+          <li key={lake.id}>{lake.name} | Trailhead: {lake.trailhead}</li>
+        )}
+      </ul>
+    )
+    
+    ReactDOM.render(
+      <App lakes={lakeList} />,
+      document.querySelector('#root')
+    );
+  </script>
+</body>
+</html>
+

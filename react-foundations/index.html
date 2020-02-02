@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Project</title>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <script>
+  // React is a JavaScript library that's used for building user interfaces
+// maintained by developers at facebook and a large community of devs
+// React aims to make developing large scale, single page applications easier
+// part of the functional paradigm that emphasizes function composition over object orientation
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type='text/javascript'>
+    // create a React element and render to the page
+    // pass the render method a few arguments, createElement and where to place it
+    // ReactDOM.render(
+    //   // first argument to createElement is what element we want to create
+    //   // second argument is properties to pass
+    //   // third argument is the child element, what do we want to be displayed inside
+    //   React.createElement('h1', {'style': {'color': 'red'}}, 'Hello World'),
+    //   // and then where do i want to render this element
+    //   document.querySelector('#root')
+    // );
+    
+    
+    // Render multiple react elements
+    ReactDOM.render(
+      // first argument to createElement is what element we want to create
+      // second argument is properties to pass
+      // third argument is the child element, what do we want to be displayed inside
+      React.createElement(
+      'div',
+      null,
+      // now lets nest a react.createElement for the child
+      React.createElement(
+        'h1',
+        null,
+        'Oh, hello!'
+      )
+      ),
+      // and then where do i want to render this element
+      document.querySelector('#root')
+    );
+  </script>
+</body>
+</html>
+
