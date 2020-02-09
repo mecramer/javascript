@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handlebars Tutorial</title>
+  <link rel='stylesheet' href='handlebars.css'>  
+</head>
+<body>
+  <div class="page-wrap">
+    <h1>Handlebars Tutorial</h1>
+    <div id="pets-container"></div>
+  </div>
+
+  <!-- injecting the pets data -->
+  <script id='petsTemplate' type='text/x-handlebars-template'>
+    <!-- #each loops through the name of the array (pets) -->
+    <!-- put the name of the property (name in this case) into the double brackets -->
+      
+    {{#each pets}}
+      <div class='pet'>
+        <div class='photo-column'>
+          <img src={{photo}}>
+        </div>
+        <div class='info-column'>
+          <h2>{{name}} <span class='species'>{{species}}</span></h2>
+          
+          <!-- for age, we need to calculate from birthYear, we will use a helper function to do that -->
+          <!-- calling the calculateAge function and passing birthYear into it  -->
+          <!-- the template should remain simple, thats why we call the helper function -->
+          <p>Age: {{calculateAge birthYear}}</p>
+
+          <!-- a handlebar conditional if statement -->
+          {{#if favFoods}}
+          <h4 class='headline-bar'>Favorite Foods</h4>
+          <ul class='favorite-foods'>
+            {{#each favFoods}}
+            <!-- this loops over an array in an object property here -->
+            <!-- triple brackets are when you need html interpreted in the imported data -->
+            <li>{{{this}}}</li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </div>
+      </div>
+
+      
+    
+    
+    {{/each}}
+    <!-- /each closes the loop -->
+  </script>
+
+
+
+  <!-- Include Handlebars from a CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script>
+    // compile the template
+    var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+    // execute the compiled template and print the output to the console
+    console.log(template({ doesWhat: "rocks!" }));
+  </script>
+
+  <script src='handlebars.js'></script>
+</body>
+</html>
