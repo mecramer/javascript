@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LET in FOR</title>
+    <style>button{padding: 20px; font-size: 60px; margin: 10px;}</style>
+</head>
+<body>
+    <button>Apple</button>
+    <button>Banana</button>
+    <button>Cranberry</button>
+    <script>
+        var buttons = document.getElementsByTagName('button')
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', () => {
+                console.log(buttons[i].innerText)
+            })
+        }
+    </script>
+</body>
+</html>
