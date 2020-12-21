@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>NodeList forEach Method</title>
+        <meta name="viewport" content="width=device-width" />
+        <!--
+    Video about call() - https://www.youtube.com/watch?v=uBdH0iB1VDM
+    Video about forEach() - https://www.youtube.com/watch?v=159EAISAxwg
+    Video about NodeLists - https://www.youtube.com/watch?v=ubNP6fbT2Ac
+    -->
+        <style>
+            h1 {
+                cursor: pointer;
+            }
+            p {
+                outline: 1px solid rebeccapurple;
+                padding: 1rem;
+            }
+            .new {
+                font-weight: 900;
+                color: greenyellow;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>forEach Polyfill for NodeLists</h1>
+
+        <p>some text 1</p>
+        <p>some text 2</p>
+        <p>some text 3</p>
+        <p>some text 4</p>
+
+        <script>
+            /******************************************
+        forEach polyfill
+        querySelectorAll returns a NodeList.
+        The forEach method was added to the NodeList object:
+        Chrome 51 -     April 2016
+        Opera 38 -      June 2016
+        Safari 10 -     September 2016
+        Firefox 50 -    November 2016
+        MS Edge 15 -    April 2017
+        Assuming a window of 3 years for people who don't
+        update their browsers on mobile devices.
+        April 2020 is the safe date to omit the polyfill
+        ******************************************/
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('h1').addEventListener('click', loopy)
+            })
+
+            let loopy = function (ev) {
+                //call this function after clicking on the h1
+                let nl = document.querySelectorAll('p')
+                //nl.forEach()
+                ;[].forEach.call(nl, (item, index) => {
+                    item.classList.add('new')
+                })
+            }
+        </script>
+    </body>
+</html>
