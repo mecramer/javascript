@@ -5,6 +5,7 @@
         <title>NodeList forEach Method</title>
         <meta name="viewport" content="width=device-width" />
         <!--
+            This video: https://bit.ly/37z6uQw
     Video about call() - https://www.youtube.com/watch?v=uBdH0iB1VDM
     Video about forEach() - https://www.youtube.com/watch?v=159EAISAxwg
     Video about NodeLists - https://www.youtube.com/watch?v=ubNP6fbT2Ac
@@ -53,7 +54,8 @@
             let loopy = function (ev) {
                 //call this function after clicking on the h1
                 let nl = document.querySelectorAll('p')
-                //nl.forEach()
+                //nl.forEach() // you'd do this if nl were an array
+                // here we are creating an empty array
                 ;[].forEach.call(nl, (item, index) => {
                     item.classList.add('new')
                 })
