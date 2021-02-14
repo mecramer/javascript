@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Crash Course | DOM Manipulation</title>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <style>
+            body {
+                font-size: 17px;
+                font-family: arial;
+                background: #f4f4f4;
+                line-height: 1.5em;
+            }
+            header {
+                background: #333;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+                border-bottom: 4px #000 solid;
+                margin-bottom: 10px;
+            }
+            #container {
+                width: 90%;
+                margin: auto;
+                padding: 10px;
+            }
+            .myClass {
+                color: blue;
+                background: black;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>jQuery Crash Course | DOM Manipulation</h1>
+        </header>
+        <div id="container">
+            <button id="btn1">Button 1</button>
+            <p class="para1">This is a paragraph</p>
+            <p class="para2">This is another paragraph</p>
+            <div id="myDiv"></div>
+            <input type="text" id="newItem" />
+            <ul id="list">
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+                <li>List Item 4</li>
+            </ul>
+            <a href="http://google.com">Google</a>
+            <ul id="users"></ul>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                // Add CSS to selected element
+                //$('p.para1').css('color', 'red');
+
+                // Add multiple CSS items to selected element, requires an object inside the .css method
+                //$('p.para1').css({color:'red',background:'#ccc'});
+
+                // Add a class to the selected element
+                //$('p.para2').addClass('myClass');
+
+                // Remove a class from the selected element
+                //$('p.para2').removeClass('myClass');
+
+                // Toggle a class when a selected element is clicked
+                //$('#btn1').click(function(){
+                //$('p.para2').toggleClass('myClass');
+                //});
+
+                // Change the text of the selected element
+                //$('#myDiv').text('Hello World');
+
+                // Change the text and html of the selected element
+                //$('#myDiv').html('<h3>Hello World</h3>');
+                //alert($('#myDiv').text());
+
+                // Append an item to the end of the selected list
+                // $('ul').append('<li>Append List Item</li>');
+
+                // Prepend an item to the beginning of the selected list
+                // $('ul').prepend('<li>Prepend List Item</li>');
+
+                // Append an item as a sibling after the selected item
+                // $('.para1').appendTo('.para2');
+
+                // Prepend an item as a sibling before the selected item
+                // $('.para1').prependTo('.para2');
+
+                // Insert content, specified by the parameter, before each element in the set of matched elements
+                // $('ul').before('<h4>Hello</h4>');
+
+                // Insert content, specified by the parameter, after each element in the set of matched elements
+                // $('ul').after('<h4>World</h4>');
+
+                // Empty all the items inside the selected element
+                // $('ul').empty();
+
+                // Empty all the items inside AND the selected element
+                // $('ul').detach();
+
+                // Add an attribute to the selected element
+                // $('a').attr('target', '_blank');
+                // alert($('a').attr('href'));
+
+                // Remove an attribute from the selected element
+                // $('a').removeAttr('target');
+
+                // Wrap around each matching selected elament
+                //$('p').wrap('<h1>');
+
+                // Wrap a single item around all the matching elements
+                //$('p').wrapAll('<h1>');
+
+                // when the keyboard is released on the selected element
+                // run a function which assigns the keycode to a variable
+                // if that keycode is 13, add another li with its contents being the current items value
+                $('#newItem').keyup(function (e) {
+                    var code = e.which
+                    if (code == 13) {
+                        e.preventDefault()
+                        $('ul').append('<li>' + e.target.value + '</li>')
+                    }
+                })
+
+                // Generate a list of names in the array to the page
+                // var myArr = ['Brad', 'Kelley', 'Nate', 'Jose'];
+
+                // $.each(myArr, function(i, val){
+                //     console.log(val)
+                // 	$('#users').append('<li>'+val+'</li>');
+                // });
+
+                // Print out the names in the array, newArr
+                var newArr = $('ul#list li').toArray()
+                $.each(newArr, function (i, val) {
+                    console.log(val.innerHTML)
+                })
+            })
+        </script>
+    </body>
+</html>
